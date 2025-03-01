@@ -1,0 +1,20 @@
+{
+  "name": "amalgamemnon-flanking",
+  "title": "Amalgamemnon's Flanking",
+  "description": "A Foundry VTT module that overrides the flanking detection rules for Pathfinder 2e.",
+  "version": "1.0.0",
+  "minimumCoreVersion": "12.0.0",
+  "compatibleCoreVersion": "12.999",
+  "system": "pf2e",
+  "author": "Amalgamemnon",
+  "url": "https://github.com/amalgamemnon/amalgamemnon-Flanking",
+  "manifest": "https://raw.githubusercontent.com/amalgamemnon/amalgamemnon-Flanking/main/module.json",
+  "download": "https://github.com/amalgamemnon/amalgamemnon-Flanking/archive/main.zip",
+  "esmodules": ["flanking-override.js"],
+  "dependencies": [
+    {
+      "name": "lib-wrapper",
+      "type": "module"
+    }
+  ]
+}
