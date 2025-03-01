@@ -1,0 +1,9 @@
+# IDE
+.idea/
+.vscode/
+
+# Built HTML
+_build/
+
+#internal
+changelog.html
