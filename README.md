@@ -7,7 +7,7 @@ This results in more valid flanking positions than the default rules-as-written,
 
 ## 📥 Installation
 1. Download the module from [GitHub Releases](https://github.com/YOUR-GITHUB-USERNAME/flanking-override/releases).
-2. Place the `flanking-override` folder into your `FoundryVTT/Data/modules/` directory.
+2. Place the `amalgamemnon-flanking` folder into your `FoundryVTT/Data/modules/` directory.
 3. Enable the module in Foundry VTT.
 
 ## ⚙️ Features
