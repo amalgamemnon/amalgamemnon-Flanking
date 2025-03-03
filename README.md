@@ -10,6 +10,10 @@ This results in more valid flanking positions than the default rules-as-written,
 2. Place the `amalgamemnon-flanking` folder into your `FoundryVTT/Data/modules/` directory.
 3. Enable the module in Foundry VTT.
 
+Alternative:
+This module is now approved through Foundry VTT: https://foundryvtt.com/packages/amalgamemnon-Flanking
+Search for it in the Add-on Modules menu within Foundry!
+
 ## ⚙️ Features
 - Uses a **line-segment/circle intersection** test for flanking.
 - Supports **multi-space creatures** and **multiple allies**.
