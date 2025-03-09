@@ -8,8 +8,8 @@
   "system": "pf2e",
   "author": "Amalgamemnon",
   "url": "https://github.com/amalgamemnon/amalgamemnon-Flanking",
-  "manifest": "https://raw.githubusercontent.com/amalgamemnon/amalgamemnon-Flanking/main/module.json",
-  "download": "https://github.com/amalgamemnon/amalgamemnon-Flanking/archive/main.zip",
+  "manifest": "https://github.com/amalgamemnon/amalgamemnon-Flanking/releases/latest/download/module.json",
+  "download": "https://github.com/amalgamemnon/amalgamemnon-Flanking/releases/download/1.0.0/main.zip",
   "esmodules": ["flanking-override.js"],
   "dependencies": [
     {
