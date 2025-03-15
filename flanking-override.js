@@ -44,8 +44,17 @@ Hooks.once('init', () => {
             console.log(`[Flanking Override] FlankerA occupies: ${JSON.stringify(flankerA_positions)}`);
             console.log(`[Flanking Override] Flankee occupies: ${JSON.stringify(flankee_positions)}`);
 
-            let flankee_radius = flankee.document.width * 0.5;
-            console.log(`[Flanking Override] Flankee radius: ${flankee_radius}`);
+            // Compute the true center of the Flankee
+            let flankee_x = flankee.document.x / canvas.grid.size;
+            let flankee_y = flankee.document.y / canvas.grid.size;
+            let flankee_size = flankee.document.width;
+            let flankee_center = {
+             x: flankee_x + (flankee_size / 2),
+                y: flankee_y + (flankee_size / 2)
+            };
+            let flankee_radius = flankee_size / 2;
+
+            console.log(`[Flanking Override] Adjusted Flankee Center: (${flankee_center.x}, ${flankee_center.y}), Radius: ${flankee_radius}`);
 
             for (let ally of allies) {
                 let flankerB_positions = getOccupiedGridCenters(ally);
@@ -55,9 +64,10 @@ Hooks.once('init', () => {
                     for (let posB of flankerB_positions) {
                         console.log("[Flanking Override] Checking line-circle intersection");
                         console.log(`   Line: (${posA.x}, ${posA.y}) → (${posB.x}, ${posB.y})`);
-                        console.log(`   Circle Center: (${flankee_positions[0].x}, ${flankee_positions[0].y}), Radius: ${flankee_radius}`);
+                        console.log(`   Circle Center: (${flankee_center.x}, ${flankee_center.y}), Radius: ${flankee_radius}`);
 
-                        if (lineIntersectsCircle(posA, posB, flankee_positions[0], flankee_radius)) {
+                        if (lineIntersectsCircle(posA, posB, flankee_center, flankee_radius)) {
+
                             console.log(`[Flanking Override] Flanking confirmed between (${posA.x},${posA.y}) and (${posB.x},${posB.y}) via ${ally.name}`);
                             return true;
                         }
