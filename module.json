@@ -1,22 +1,44 @@
 {
   "id": "amalgamemnon-flanking",
   "title": "amalgamemnon's Flanking",
-  "description": "A Foundry VTT module that overrides the flanking detection rules for Pathfinder 2e.",
-  "version": "1.0.1",
-  "manifest": "https://github.com/amalgamemnon/amalgamemnon-Flanking/releases/latest/download/module.json",
-  "download": "https://github.com/amalgamemnon/amalgamemnon-Flanking/releases/download/1.0.1/main.zip",
-  "compatibility": {
-    "minimum": "12",
-    "verified": "12"
-  },
-  "system": "pf2e",
-  "author": "amalgamemnon",
-  "url": "https://github.com/amalgamemnon/amalgamemnon-Flanking",
-  "esmodules": ["flanking-override.js"],
-  "dependencies": [
+  "description": "Expands the Pathfinder 2e flanking position rule so more intuitive positions count as flanking, for creatures of every size.",
+  "version": "2.0.0",
+  "authors": [
     {
-      "name": "lib-wrapper",
-      "type": "module"
+      "name": "amalgamemnon",
+      "url": "https://github.com/amalgamemnon"
     }
-  ]
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14.369"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "pf2e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "8.0.0"
+        }
+      }
+    ],
+    "requires": [
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "compatibility": {
+          "minimum": "1.13.5"
+        }
+      }
+    ]
+  },
+  "esmodules": ["flanking-override.js"],
+  "url": "https://github.com/amalgamemnon/amalgamemnon-Flanking",
+  "manifest": "https://github.com/amalgamemnon/amalgamemnon-Flanking/releases/latest/download/module.json",
+  "download": "https://github.com/amalgamemnon/amalgamemnon-Flanking/releases/download/2.0.0/module.zip",
+  "bugs": "https://github.com/amalgamemnon/amalgamemnon-Flanking/issues",
+  "readme": "https://github.com/amalgamemnon/amalgamemnon-Flanking/blob/main/README.md",
+  "changelog": "https://github.com/amalgamemnon/amalgamemnon-Flanking/blob/main/CHANGELOG.md",
+  "license": "LICENSE"
 }

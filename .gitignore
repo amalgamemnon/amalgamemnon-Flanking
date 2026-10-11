@@ -7,3 +7,8 @@ _build/
 
 #internal
 changelog.html
+
+# Release build
+module.zip
+dist/
+node_modules/
