@@ -53,7 +53,8 @@ jobs:
     permissions:
       contents: read
     env:
-      PACKAGE_ID: ${{ vars.FOUNDRY_PACKAGE_ID || 'amalgamemnon-flanking' }}
+      # The foundryvtt.com listing was registered with a capital F, and its release API is case-sensitive
+      PACKAGE_ID: ${{ vars.FOUNDRY_PACKAGE_ID || 'amalgamemnon-Flanking' }}
       FOUNDRY_RELEASE_TOKEN: ${{ secrets.FOUNDRY_RELEASE_TOKEN }}
     steps:
       - uses: actions/checkout@v7
@@ -93,8 +94,15 @@ jobs:
               sleep "${wait:-60}"
             done
 
+            # Foundry answers errors such as a bad token or package ID with plain text, not JSON
             echo "HTTP $code: $(cat response.json)"
-            jq -e '.status == "success"' response.json > /dev/null
+            if ! jq -e '.status == "success"' response.json > /dev/null 2>&1; then
+              echo "::error::foundryvtt.com rejected the release (HTTP $code): $(cat response.json)"
+              if [ "$code" = 403 ]; then
+                echo "::error::Check the FOUNDRY_RELEASE_TOKEN secret, and that the package ID ($PACKAGE_ID) matches foundryvtt.com exactly, including capitals. Set the FOUNDRY_PACKAGE_ID repository variable to override it."
+              fi
+              exit 1
+            fi
           }
 
           publish true
